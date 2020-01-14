@@ -25,6 +25,10 @@
     <link href="{{ asset('css/bsUtility.css') }}" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
     <script src="{{ asset('plugins/jquery/jquery-2.1.4.min.js')  }}"></script>
+
+    <link rel="shortcut icon" href="{{asset('images/guest_logo.png')}}" />
+    <link rel="apple-touch-icon" href="{{asset('images/guest_logo.png')}}" />
+
     @yield('header')
 </head>
 
@@ -46,7 +50,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ asset('images/logo.png') }}" alt="" />
+                        <img style="padding-left:2px"  src="{{ asset('images/logo.png') }}" alt="" />
                     </a>
                 </div>
 

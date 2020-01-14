@@ -54,7 +54,7 @@
             @if ($post->hasVideo())
             @foreach ($post->images()->get() as $image)
             <div>
-                <video class="afterglow" width="480" height="340" controls>
+                <video class="afterglow" width="100%" height="340" controls>
                     <source src="{{$image->getVideoURL()}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>

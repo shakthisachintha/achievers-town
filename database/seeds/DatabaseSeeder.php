@@ -22,25 +22,25 @@ class DatabaseSeeder extends Seeder
                 'name' => $hobby
             ]);
         }
-        $users = factory(App\Models\User::class, 1000)->create();
-        User::create([
-            "name"=>"Shakthi Sachintha",
-            "email"=>"shakthisachintha@gmail.com",
-            "password"=>"$2y$10$8dpikdcKrbU3imjkn.jqzu8NcZJcBUDPOTYmEHcNKgkt7JGluVsE.",
-            "username"=>"shakthi"
-        ]);
+        // $users = factory(App\Models\User::class, 1000)->create();
+        // User::create([
+        //     "name"=>"Shakthi Sachintha",
+        //     "email"=>"shakthisachintha@gmail.com",
+        //     "password"=>"$2y$10$8dpikdcKrbU3imjkn.jqzu8NcZJcBUDPOTYmEHcNKgkt7JGluVsE.",
+        //     "username"=>"shakthi"
+        // ]);
 
-        for ($i=1; $i <=40 ; $i++) { 
-            UserFollowing::create([
-                "follower_user_id"=>'1001',
-                "following_user_id"=>$i,
-                "allow"=>'1',
-            ]);
-            UserFollowing::create([
-                "follower_user_id"=>$i,
-                "following_user_id"=>'1001',
-                "allow"=>'1',
-            ]);
-        }
+        // for ($i=1; $i <=40 ; $i++) { 
+        //     UserFollowing::create([
+        //         "follower_user_id"=>'1001',
+        //         "following_user_id"=>$i,
+        //         "allow"=>'1',
+        //     ]);
+        //     UserFollowing::create([
+        //         "follower_user_id"=>$i,
+        //         "following_user_id"=>'1001',
+        //         "allow"=>'1',
+        //     ]);
+        // }
     }
 }

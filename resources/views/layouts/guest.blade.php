@@ -18,6 +18,10 @@
     <link href="{{ asset('plugins/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/guest.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bsUtility.css') }}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{asset('images/guest_logo.png')}}" />
+    <link rel="apple-touch-icon" href="{{asset('images/guest_logo.png')}}" />
+    
     <script src="{{asset('js/particles.js')}}"></script>
     <script>
         /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
@@ -36,7 +40,7 @@
         <div class="row">
             <div class="col-md-5 pt-5 mt-5 text-center lead text-white">
                 <a href="{{ url('/') }}" class="mt-0 pt-0">
-                    <img src="{{ asset('images/guest_logo.png') }}" class="mt-0 pt-0" alt="" />
+                    <img width="300px" src="{{ asset('images/guest_logo.png') }}" class="mt-0 pt-0" alt="" />
                 </a><br>
                 <p>
                     Achievers Town one of the biggest gatherings of achievers to present ideas, create new innovations

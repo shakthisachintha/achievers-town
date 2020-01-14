@@ -1,13 +1,24 @@
 <div class="clearfix"></div>
 <script>
     function previewVideoName(x){
-   name=x.value;
-   f = name.replace(/.*[\/\\]/, '');
-   $("#video-name").text(f);
+        name=x.value;
+        f = name.replace(/.*[\/\\]/, '');
+        var uploadField = document.getElementById("video-upload");
+        if(uploadField.files[0].size > 83886080){
+            f="File Is Too Big! Maximum File Size Is 80MB";
+            uploadField.value = "";
+        };
+        $("#video-name").text(f);
 }
 
 
 function UploadVideo(){
+    var uploadField = document.getElementById("video-upload");
+    if( uploadField.value == ""){
+        $('#errorMessageModal').modal('show');
+        $('#errorMessageModal #errors').html('Select a Video To Upload!');
+        return
+    }
     var form_name = '#form-new-post';
 
     $(form_name + ' .loading-post').show();
@@ -35,7 +46,7 @@ function UploadVideo(){
             if (response.code == 200){
                 $(form_name + ' .loading-post').hide();
                 $('.post-list-top-loading').show();
-                // location.reload(forceGet)
+                window.location.href = "{{route('home')}}";
             }else{
                 $('#errorMessageModal').modal('show');
                 $('#errorMessageModal #errors').html(response.message);
@@ -68,8 +79,8 @@ function UploadVideo(){
                         <i class="fa fa-image"></i> Add Video
                     </button>
                     <div class="clearfix"></div>
-                    <div class=" mt-2 mb-2" id="video-name"></div>
-                    <input type="file" accept="video/*" class="image-input" name="video"
+                    
+                    <input id="video-upload" type="file" accept="video/*" class="image-input" name="video"
                         onchange="previewVideoName(this)">
                 </div>
                 <div class="col-xs-4">
@@ -82,6 +93,7 @@ function UploadVideo(){
                         Share
                     </button>
                 </div>
+                <div class="col-xs-12 mt-4 pl-4 pr-4" id="video-name"></div>
             </div>
         </form>
     </div>
