@@ -26,9 +26,13 @@ class ProfileController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
+
+    public function privacy(){
+        return view('other.privacy');
+    }
 
     public function secure($username, $is_owner = false){
         $user = User::where('username', $username)->first();

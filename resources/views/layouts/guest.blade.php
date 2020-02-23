@@ -3,8 +3,18 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Achievers Town: Social Media Connections</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Achievers Town Wild Wild West of social media where people share content about the roulette wheel of life in Achievers Town."/>
+   <meta name="keywords" content="achievers, town, social media, share content, content, roulette wheel, roulette, wheel">
+   <meta name="author" content="Mark Hayes">
+   <meta name="robots" content="index, follow">
+   <meta name="revisit-after" content="1 Week">
+   <meta name="language" content="EN">
+   <meta name="copyright" content="Achievers Town">
+   <meta name="rating" content="general">
+   <meta name="generator" content="FreeWebSubmission.com Meta Tag Generator">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -42,12 +52,10 @@
                 <a href="{{ url('/') }}" class="mt-0 pt-0">
                     <img width="300px" src="{{ asset('images/guest_logo.png') }}" class="mt-0 pt-0" alt="" />
                 </a><br>
-                <p>
-                    Achievers Town one of the biggest gatherings of achievers to present ideas, create new innovations
-                    and problem solving solutions for advancements now and in the future.
-                    The number one source for maximum business developments, achievements, and making connections is
-                    here in Achievers Town.
-                    The Future's Bright. The Future's<br> <b>Achievers Town</b>.
+                <b><p>
+                    Achievers Town Wild Wild West of social media where people share content about the roulette wheel of life in Achievers Town.</br></br>
+                    Achievers Town a source for connections and communications.</b>
+                    The Future's Bright.</br> The Future's <b>Achievers Town</b>.
                 </p>
 
             </div>
@@ -95,6 +103,29 @@
     <!-- Scripts -->
     <script src="{{ asset('plugins/jquery/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+
+
+
+<!-- Default Statcounter code for Achievers Town
+http://achieverstown.com./ -->
+<script type="text/javascript">
+var sc_project=12171005; 
+var sc_invisible=1; 
+var sc_security="d85e379f"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12171005/0/d85e379f/1/"
+alt="Web Analytics Made Easy -
+StatCounter"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+
+
 </body>
 
 </html>

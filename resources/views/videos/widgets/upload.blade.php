@@ -70,7 +70,7 @@ function UploadVideo(){
         <form enctype="multipart/form-data" id="form-new-post">
             {{ csrf_field() }}
             <input type="hidden" name="group_id" value="">
-            <textarea name="content" id="video-disc" placeholder="Have Any Edeucational Videos?"></textarea>
+            <textarea name="content" id="video-disc" placeholder="Have Any Educational Videos?"></textarea>
             <hr />
 
             <div class="row">

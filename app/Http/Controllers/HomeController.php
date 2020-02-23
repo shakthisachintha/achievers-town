@@ -42,6 +42,9 @@ class HomeController extends Controller
 
     }
 
+    public function privacy(){
+        
+    }
 
     public function search(Request $request){
 

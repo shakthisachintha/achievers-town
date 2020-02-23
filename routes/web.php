@@ -20,7 +20,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 Auth::routes(['reset' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/settings', 'SettingsController@index');
 Route::post('/settings', array(
     'as' => 'settings',
@@ -39,7 +39,7 @@ Route::post('/posts/comments/delete', 'PostsController@deleteComment');
 Route::get('/post/{id}', 'PostsController@single');
 
 // Search
-Route::get('/search', 'HomeController@search');
+Route::get('/search', 'HomeController@search')->middleware('auth');
 
 
 // Groups
@@ -103,3 +103,5 @@ Route::get('/{username}/followers', 'ProfileController@followers');
 Route::post('/{username}/save/hobbies', 'ProfileController@saveHobbies');
 Route::post('/{username}/save/relationship', 'ProfileController@saveRelationship');
 
+
+Route::get('/privacy/policy', 'ProfileController@privacy')->name('privacy');

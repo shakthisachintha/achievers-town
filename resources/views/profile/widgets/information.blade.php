@@ -9,40 +9,45 @@
             </div>
         </div>
     @endif
-    <ul class="list-group">
-        <li class="list-group-item">
-            @if($user->sex == 0)
-                <i class="fa fa-mars"></i>
-            @else
-                <i class="fa fa-venus"></i>
+    <div class="panel panel-default">
+        <div class="panel-heading">Personal Data</div> 
+        <ul class="list-group">
+            {{-- <li class="list-group-item">
+               
+                @if($user->sex == 0)
+                    <i class="fa fa-mars"></i>
+                @else
+                    <i class="fa fa-venus"></i>
+                @endif
+                {{ $user->getSex() }}
+            </li> --}}
+            @if($user->has('location'))
+            <li class="list-group-item">
+                <i class="fa fa-map-marker"></i>
+                {{ $user->location->city->name }}
+            </li>
             @endif
-            {{ $user->getSex() }}
-        </li>
-        @if($user->has('location'))
-        <li class="list-group-item">
-            <i class="fa fa-map-marker"></i>
-            {{ $user->location->city->name }}
-        </li>
-        @endif
-        @if ($user->phone)
-        <li class="list-group-item">
-            <i class="fa fa-mobile"></i>
-            {{ $user->getPhone() }}
-        </li>
-        @endif
-        @if ($user->birthday)
-        <li class="list-group-item">
-            <i class="fa fa-birthday-cake"></i>
-            {{ $user->birthday->format('d.m.Y') }} - {{ $user->getAge() }}
-        </li>
-        @endif
-        @if ($user->bio)
-        <li class="list-group-item">
-            <i class="fa fa-info-circle"></i>
-            {{ $user->bio }}
-        </li>
-        @endif
-    </ul>
+            @if ($user->phone)
+            <li class="list-group-item">
+                <i class="fa fa-mobile"></i>
+                {{ $user->getPhone() }}
+            </li>
+            @endif
+            @if ($user->birthday)
+            <li class="list-group-item">
+                <i class="fa fa-birthday-cake"></i>
+                {{ $user->birthday->format('d.m.Y') }} - {{ $user->getAge() }}
+            </li>
+            @endif
+            @if ($user->bio)
+            <li class="list-group-item">
+                <i class="fa fa-info-circle"></i>
+                {{ $user->bio }}
+            </li>
+            @endif
+        </ul>
+    </div>
+   
 </div>
 
 
