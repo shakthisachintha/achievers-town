@@ -66,6 +66,10 @@ class Post extends Model
         return $this->has_video;
     }
 
+    public function hasAttach(){
+        return $this->has_attachment;
+    }
+
     public function checkLike($user_id){
         if ($this->likes()->where('like_user_id', $user_id)->get()->first()){
             return true;

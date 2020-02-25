@@ -45,13 +45,17 @@
         <hr class="fix-hr">
         <div class="post-content post-content-s">
             {{ $post->content }}
-            @if($post->hasImage() && !$post->hasVideo())
+
+
+            @if($post->hasImage() && !$post->hasVideo() && !$post->hasAttach()) {{-- post have an image --}}
             @foreach($post->images()->get() as $image)
             <a data-fancybox="gallery" href="{{ $image->getURL() }}" data-caption="{{ $post->content }}"><img
                     class="img-responsive post-image" src="{{ $image->getURL() }}"></a>
             @endforeach
             @endif
-            @if ($post->hasVideo())
+
+
+            @if ($post->hasVideo()) {{-- post have an image --}}
             @foreach ($post->images()->get() as $image)
             <div>
                 <video class="afterglow" width="100%" height="340" controls>
@@ -59,6 +63,17 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
+            @endforeach
+            @endif
+
+            @if($post->hasImage() && !$post->hasVideo() && $post->hasAttach())
+            <br><br>
+            <p style="font-size:1.2rem !important" class="muted">This post contains an attachment</p>
+
+            @foreach($post->images()->get() as $image)
+            <p class="text-black" style="font-size:1.4rem !important">
+                <a href="{{ $image->getAttachment() }}"><i class="fa fa-download"></i> Download</a>
+            </p>
             @endforeach
             @endif
         </div>

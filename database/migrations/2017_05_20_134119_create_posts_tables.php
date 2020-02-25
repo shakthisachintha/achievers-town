@@ -19,10 +19,10 @@ class CreatePostsTables extends Migration
             $table->integer('group_id')->nullable();
             $table->boolean('has_image')->default(0);
             $table->boolean('has_video')->default(0);
+            $table->boolean('has_attachment')->default(0);
             $table->text('content')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-
 
             $table->timestamps();
         });
@@ -45,7 +45,6 @@ class CreatePostsTables extends Migration
             $table->increments('id');
             $table->integer('post_id')->unsigned();
             $table->string('image_path');
-
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('CASCADE');
 
         });

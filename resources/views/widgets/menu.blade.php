@@ -15,7 +15,7 @@
         <li class="list-group-item">
             <a href="{{ url('/videos') }}" class="menu-videos">
                 <i class="fa fa-video-camera"></i>
-                Educational Videos
+                Attachments
             </a>
         </li>
         <li class="list-group-item">

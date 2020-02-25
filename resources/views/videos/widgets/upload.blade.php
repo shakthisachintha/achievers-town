@@ -1,22 +1,37 @@
 <div class="clearfix"></div>
 <script>
     function previewVideoName(x){
+        var exts=["mkv","wmv","flv","mov","avi","mp4","pdf","txt","doc","odp","docx","xlsx","pub","csv","pptx","zip","rar"]
+        $("#video-name").removeClass('text-danger');
+        var filePath = $("#video-upload").val(); 
+        var file_ext = filePath.substr(filePath.lastIndexOf('.')+1,filePath.length);
+        console.log("File Extension ->-> "+file_ext);
+
+        if(!exts.includes(file_ext.toLowerCase())){
+            $("#video-name").addClass("text-danger");
+            $("#video-name").text("Unsupported File Type To Upload");
+            return;
+        }
+
         name=x.value;
         f = name.replace(/.*[\/\\]/, '');
         var uploadField = document.getElementById("video-upload");
         if(uploadField.files[0].size > 83886080){
             f="File Is Too Big! Maximum File Size Is 80MB";
             uploadField.value = "";
+            $("#video-name").addClass("text-danger");
         };
         $("#video-name").text(f);
 }
+
+
 
 
 function UploadVideo(){
     var uploadField = document.getElementById("video-upload");
     if( uploadField.value == ""){
         $('#errorMessageModal').modal('show');
-        $('#errorMessageModal #errors').html('Select a Video To Upload!');
+        $('#errorMessageModal #errors').html('Select a File To Upload!');
         return
     }
     var form_name = '#form-new-post';
@@ -70,17 +85,19 @@ function UploadVideo(){
         <form enctype="multipart/form-data" id="form-new-post">
             {{ csrf_field() }}
             <input type="hidden" name="group_id" value="">
-            <textarea name="content" id="video-disc" placeholder="Have Any Educational Videos?"></textarea>
+            <textarea name="content" id="video-disc" placeholder="Have Any Useful Resources?"></textarea>
             <hr />
 
             <div class="row">
                 <div class="col-xs-4">
-                    <button type="button" class="btn btn-default btn-add-image btn-sm" onclick="uploadPostImage()">
-                        <i class="fa fa-image"></i> Add Video
+                    <button type="button" style="display:inline-block" class="btn btn-default btn-add-image btn-sm"
+                        onclick="uploadPostImage()">
+                        <i class="fa fa-paperclip"></i> Attachments
                     </button>
                     <div class="clearfix"></div>
-                    
-                    <input id="video-upload" type="file" accept="video/*" class="image-input" name="video"
+
+                    <input id="video-upload" type="file" accept=".zip,.rar,.doc,.odp,.pub,.docx,.xlsx,.csv,.pptx,
+                    text/plain, application/pdf,video/*" class="image-input" name="video"
                         onchange="previewVideoName(this)">
                 </div>
                 <div class="col-xs-4">

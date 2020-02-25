@@ -26,4 +26,8 @@ class PostImage extends Model
         return url('storage/videos/'.$this->image_path);
     }
 
+    public function getAttachment(){
+        return url('storage/attachments/'.$this->image_path);
+    }
+
 }
