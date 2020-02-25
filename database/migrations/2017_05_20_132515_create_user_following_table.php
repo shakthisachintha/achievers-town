@@ -24,12 +24,10 @@ class CreateUserFollowingTable extends Migration
 
             $table->foreign('follower_user_id')
                 ->references('id')->on('users')->onDelete("CASCADE");
-
-
         });
     }
 
-    /**
+    /**simple comment added
      * Reverse the migrations.
      *
      * @return void
